@@ -1,11 +1,5 @@
 <?php $active_tab = ! empty( $_GET['tab'] ) ? sanitize_text_field( $_GET['tab'] ) : 'urls'; ?>
 
-<div class="col-sm-12">
-	<header class="entry-header">
-		<h1><?php _e( 'Affiliate Dashboard', 'pixelo' ); ?></h1>
-	</header><!-- .entry-header -->
-</div>
-
 <div id="affwp-affiliate-dashboard">
 
 	<div class="row">
@@ -59,7 +53,6 @@
 					<li class="affwp-affiliate-dashboard-tab<?php echo $active_tab == 'settings' ? ' active' : ''; ?>">
 						<a href="<?php echo esc_url( add_query_arg( 'tab', 'settings', get_permalink( affiliate_wp()->settings->get( 'affiliates_page' ) ) ) ); ?>"><?php _e( 'Settings', 'affiliate-wp' ); ?></a>
 					</li>
-					<li><a href="<?php echo wp_logout_url( 'https://www.pixelo.net/login-affiliate-area/' ); ?>"><?php _e("Log Out",  'pixelo'); ?></a></li>
 					<?php do_action( 'affwp_affiliate_dashboard_tabs', affwp_get_affiliate_id(), $active_tab ); ?>
 				</ul>
 			</div>
